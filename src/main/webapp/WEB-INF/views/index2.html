@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Index | </title>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <section layout:fragment="content">
+            <div class="container">
+              <div class="row">
+                <div th:each="blog : ${blogs}" class="row post">
+                  <div class="col-md-12">
+                    <a th:href="@{/view-blog/__${blog.id}__}"><h3 th:text="${blog.title}"></h3></a>
+                  </div>
+                  <div class="post-teaser">
+                    <img th:src="@{/features/__${blog.feature}__}"/>
+                  </div>
+                  <div class="col-md-7 post-teaser" th:utext="${blog.content}"></div>
+                  <div class="col-md-12 post-meta">
+                    <span th:text="${blog.createDate}"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- /page content -->
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Delete | Category</title>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <section layout:fragment="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Delete Category</h2>
+                            <form  th:object="${category}" method="post" class="form">
+                                <div class="form-group">
+                                    <lable>Category</lable>
+                                    <input type="text" th:field="*{name}" class="form-control"  disabled />
+                                </div>
+                                <button class="btn-danger" type="submit">submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /page content -->
+    </div>
+</div>
+
+</body>
+</html>
