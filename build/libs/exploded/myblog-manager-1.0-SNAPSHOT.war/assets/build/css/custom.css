@@ -4253,3 +4253,17 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
     background-color: #ffff !important;
 }
 /** /bootstrap-datetimepicker **/
+/**/
+.footer-copy {
+    text-align: center;
+}
+
+.post-feature-thumbnail {
+    max-height: 100px;
+}
+.post .post-feature{
+    overflow: hidden;
+}
+.post .post-feature img{
+    width: 100%;
+}

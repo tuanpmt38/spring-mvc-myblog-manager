@@ -1,0 +1,19 @@
+.footer-copy {
+    text-align: center;
+}
+
+.post-feature-thumbnail {
+    max-height: 100px;
+}
+.post .post-feature{
+    overflow: hidden;
+}
+.post .post-feature img{
+    width: 100%;
+}
+.thumbnail-sm{
+    width: 70px;
+    height: 70px;
+}
+
+/*index -css- page*/

@@ -3,6 +3,7 @@ package com.codegym.blog.model;
 import org.springframework.web.multipart.MultipartFile;
 
 public class FormPost {
+
     private Long id;
     private String title;
     private String summary;

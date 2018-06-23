@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Create | </title>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <section layout:fragment="content">
+                <div class="container">
+                    <div class="row">
+                        <h2>Create new blog</h2>
+                        <th:block th:if="${message}">
+                            <div class="alert alert-info" role="alert">
+                                <p th:text="${message}"></p>
+                            </div>
+                        </th:block>
+                        <form th:action="@{/create-blog}" th:object="${blog}" method="post" class="form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <lable>Title</lable>
+                                <input type="text" th:field="*{title}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <lable>Summary</lable>
+                                <textarea type="text" class="form-control" id="teaser-summernote" th:field="*{summary}"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <lable>Content</lable>
+                                <textarea type="text" class="form-control" id="content-summernote" th:field="*{content}"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label >Category</label>
+                                <select th:field="*{category}">
+                                    <option th:each="p : ${categories}" th:value="${p.id}" th:text="${p.name}"></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Feature image:</label>
+                                <input type="file" th:field="*{feature}"/>
+                            </div>
+                                <button class="btn btn-info" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /page content -->
+    </div>
+</div>
+
+</body>
+</html>

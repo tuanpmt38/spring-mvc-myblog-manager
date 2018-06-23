@@ -22,6 +22,12 @@ import java.util.UUID;
 
 @Controller
 public class BlogController {
+    public static final String ADMIN_BLOG_CREATE = "/admin/blog/create";
+    public static final String ADMIN_BLOG_LIST = "/admin/blog/list";
+    public static final String ADMIN_BLOG_EDIT = "/admin/blog/edit";
+    public static final String ADMIN_BLOG_DELETE = "/admin/blog/delete";
+    public static final String ADMIN_BLOG_VIEW = "/admin/blog/view";
+    public static final String ERROR_404 = "/error-404";
     @Autowired
     private BlogService blogService;
 
@@ -34,19 +40,22 @@ public class BlogController {
     }
 
     @GetMapping("/create-blog")
-    public ModelAndView createForm(){
-        ModelAndView modelAndView = new ModelAndView("/blog/create");
+    public ModelAndView createForm() {
+
+        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_CREATE);
         modelAndView.addObject("blog", new Blog());
         return modelAndView;
     }
 
     @PostMapping("/create-blog")
-    public ModelAndView saveBlog(@ModelAttribute("formPost")FormPost formPost){
+    public ModelAndView saveBlog(@ModelAttribute("formPost") FormPost formPost) {
         try {
+
             String randomCode = UUID.randomUUID().toString();
             String originFileName = formPost.getFeature().getOriginalFilename();
             String randomName = randomCode + StorageUtils.getFileExtension(originFileName);
             formPost.getFeature().transferTo(new File(StorageUtils.FEATURE_LOCATION + "/" + randomName));
+
             Blog blog = new Blog();
             blog.setTitle(formPost.getTitle());
             blog.setSummary(formPost.getSummary());
@@ -54,37 +63,42 @@ public class BlogController {
             blog.setCreateDate(LocalDate.now());
             blog.setFeature(randomName);
             blog.setCategory(formPost.getCategory());
+
             blogService.save(blog);
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        ModelAndView modelAndView = new ModelAndView("/blog/create");
+        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_CREATE);
         modelAndView.addObject("blog", new FormPost());
         modelAndView.addObject("message", "create blog successfully");
         return modelAndView;
     }
 
     @GetMapping("/blogs")
-    public ModelAndView listBlog(@RequestParam("search") Optional<String> search, Pageable pageable){
+    public ModelAndView listBlog(@RequestParam("search") Optional<String> search, Pageable pageable) {
 
         Page<Blog> blogs;
-        if(search.isPresent()){
-            blogs = blogService.findAllByTitleContaining(search.get(),pageable);
-        }else {
-            blogs= blogService.findAll(pageable);
+
+        if (search.isPresent()) {
+            blogs = blogService.findAllByTitleContaining(search.get(), pageable);
+        } else {
+            blogs = blogService.findAll(pageable);
         }
-        ModelAndView modelAndView = new ModelAndView("/blog/list");
+
+        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_LIST);
         modelAndView.addObject("blogs", blogs);
         return modelAndView;
     }
 
     @GetMapping("/edit-blog/{id}")
-    public ModelAndView editForm(@PathVariable("id") Long id){
+    public ModelAndView editForm(@PathVariable("id") Long id) {
 
         Blog blog = blogService.findById(id);
+
         FormPost formPost = new FormPost();
+
         formPost.setId(blog.getId());
         formPost.setTitle(blog.getTitle());
         formPost.setSummary(blog.getSummary());
@@ -92,51 +106,56 @@ public class BlogController {
         formPost.setCategory(blog.getCategory());
         formPost.setFeatureUrl(blog.getFeature());
 
-        ModelAndView modelAndView = new ModelAndView("/blog/edit");
-            modelAndView.addObject("formPost",formPost);
-            return modelAndView;
+        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_EDIT);
+        modelAndView.addObject("formPost", formPost);
+        return modelAndView;
     }
 
     @PostMapping("/edit-blog/{id}")
-    public ModelAndView updateBlog(@PathVariable ("id") Long id, @ModelAttribute ("formPost") FormPost formPost){
+    public ModelAndView updateBlog(@PathVariable("id") Long id, @ModelAttribute("formPost") FormPost formPost) {
 
-        try{
-            Blog blog = blogService.findById(id);
-            if(!formPost.getFeature().isEmpty()){
-                StorageUtils.removeFeature(blog.getFeature());
-                String randomCode = UUID.randomUUID().toString();
-                String originFileName = formPost.getFeature().getOriginalFilename();
-                String randomName = randomCode + StorageUtils.getFileExtension(originFileName);
-                formPost.getFeature().transferTo(new File(StorageUtils.FEATURE_LOCATION + "/"+ randomName));
-                blog.setFeature(randomName);
-                formPost.setFeatureUrl(randomName);
+        Blog blog = blogService.findById(id);
+
+        if(!formPost.getFeature().isEmpty()){
+            StorageUtils.removeFeature(blog.getFeature());
+            String randomCode = UUID.randomUUID().toString();
+            String originFileName = formPost.getFeature().getOriginalFilename();
+            String randomName = randomCode + StorageUtils.getFileExtension(originFileName);
+
+            try {
+                formPost.getFeature().transferTo(new File(StorageUtils.FEATURE_LOCATION +"/"+randomName));
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-            blog.setId(formPost.getId());
-            blog.setTitle(formPost.getTitle());
-            blog.setSummary(formPost.getSummary());
-            blog.setContent(formPost.getContent());
-            blog.setCategory(formPost.getCategory());
-            blogService.save(blog);
-        }catch (IOException e){
-            e.printStackTrace();
+            blog.setFeature(randomName);
+            formPost.setFeatureUrl(randomName);
         }
 
-        ModelAndView modelAndView = new ModelAndView("/blog/edit");
-        modelAndView.addObject("formPost",formPost);
-        modelAndView.addObject("message","update blog successfully");
+        blog.setId(formPost.getId());
+        blog.setTitle(formPost.getTitle());
+        blog.setSummary(formPost.getSummary());
+        blog.setContent(formPost.getContent());
+        blog.setCategory(formPost.getCategory());
+
+        blogService.save(blog);
+
+        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_EDIT);
+        modelAndView.addObject("formPost", formPost);
+        modelAndView.addObject("message", "update blog successfully");
         return modelAndView;
     }
 
     @GetMapping("/delete-blog/{id}")
-    public ModelAndView deleteForm(@PathVariable("id") Long id){
+    public ModelAndView deleteForm(@PathVariable("id") Long id) {
+
         Blog blog = blogService.findById(id);
-        if(blog == null){
-            ModelAndView modelAndView = new ModelAndView("/error-404");
+        if (blog == null) {
+            ModelAndView modelAndView = new ModelAndView(ERROR_404);
             return modelAndView;
-        }else {
-            ModelAndView modelAndView = new ModelAndView("/blog/delete");
-            modelAndView.addObject("blog",blog);
+        } else {
+            ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_DELETE);
+            modelAndView.addObject("blog", blog);
             return modelAndView;
         }
     }
@@ -153,11 +172,11 @@ public class BlogController {
 
         Blog blog = blogService.findById(id);
         if (blog != null) {
-            ModelAndView modelAndView = new ModelAndView("/blog/view");
+            ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_VIEW);
             modelAndView.addObject("blog", blog);
             return modelAndView;
         } else {
-            ModelAndView modelAndView = new ModelAndView("/error-404");
+            ModelAndView modelAndView = new ModelAndView(ERROR_404);
             return modelAndView;
         }
     }

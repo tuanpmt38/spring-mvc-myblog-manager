@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>List Blog | </title>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <section layout:fragment="content">
+                <div class="container">
+                    <div class="row">
+                        <h2>List Blogs</h2>
+                        <table class="table table-striped custab">
+                            <thead>
+                            <a href="/create-blog" class="btn btn-info btn-xs pull-right"><b>+</b> Add new blog</a>
+                            <tr>
+                                <th>Stt</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Create Date</th>
+                                <th>Category</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <th:block th:each="blog, inter:${blogs}">
+                            <tr>
+                                <td th:text="${inter.count}"></td>
+                                <td>
+                                    <img th:src="@{/features/__${blog.feature}__}" class="thumbnail-sm">
+                                </td>
+                                <td><a th:href="@{/view-blog/__${blog.id}__}" th:text="${blog.title}"></a></td>
+                                <td th:text="${blog.createDate}"></td>
+                                <td th:text="${blog.category.name}"></td>
+                                <td class="text-center"><a th:href="@{/edit-blog/__${blog.id}__}" class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Edit</a> <a th:href="@{/delete-blog/__${blog.id}__}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                            </tr>
+                            </th:block>
+                        </table>
+                        <div>
+                            <a th:href="@{'/blogs'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}" th:text="#{previous_lable}"></a>
+                            <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+                            <a th:href="@{'/blogs'(page=${blogs.number + 2})}" th:if="${blogs.hasNext()}" th:text="#{next_lable}">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /page content -->
+    </div>
+</div>
+
+</body>
+</html>

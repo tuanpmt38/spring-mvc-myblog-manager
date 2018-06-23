@@ -4,18 +4,26 @@ import com.codegym.blog.model.Blog;
 import com.codegym.blog.model.Category;
 import com.codegym.blog.service.BlogService;
 import com.codegym.blog.service.CategoryService;
+import com.codegym.blog.validation.CategoryValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.Lob;
+import javax.validation.Valid;
 
 @Controller
 public class CategoryController {
+
+    public static final String ADMIN_CATEGORY_LIST = "/admin/category/list";
+    public static final String ADMIN_CATEGORY_FORM_CREATE = "/admin/category/create";
+    public static final String ADMIN_CATEGORY_FORM_EDIT = "/admin/category/edit";
+    public static final String ADMIN_CATEGORY_DELETE = "/admin/category/delete";
+    public static final String ADMIN_CATEGORY_VIEW = "/admin/category/view";
+    public static final String ERROR_404 = "/error-404";
+
     @Autowired
     private CategoryService categoryService;
 
@@ -25,7 +33,7 @@ public class CategoryController {
     @GetMapping("/categories")
     public ModelAndView listCategory(){
         Iterable<Category> categories = categoryService.findAll();
-        ModelAndView modelAndView = new ModelAndView("/category/list");
+        ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_LIST);
         modelAndView.addObject("categories", categories);
         return modelAndView;
     }
@@ -33,17 +41,21 @@ public class CategoryController {
     @GetMapping("/create-category")
     public ModelAndView createFormCategory(){
 
-        ModelAndView modelAndView = new ModelAndView("/category/create");
+        ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_FORM_CREATE);
         modelAndView.addObject("category", new Category());
         return modelAndView;
     }
 
     @PostMapping("/create-category")
-    public ModelAndView create(@ModelAttribute ("category") Category category){
+    public ModelAndView create(@Valid @ModelAttribute ("category") Category category, BindingResult bindingResult){
 
-        ModelAndView modelAndView = new ModelAndView("/category/create");
+        ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_FORM_CREATE);
+        new CategoryValidation().validate(category, bindingResult);
+        if(bindingResult.hasFieldErrors()){
+            return modelAndView;
+        }
         categoryService.save(category);
-        modelAndView.addObject("category",category);
+        modelAndView.addObject("category",new Category());
         modelAndView.addObject("message","create new the category successfully");
         return modelAndView;
     }
@@ -51,7 +63,7 @@ public class CategoryController {
     @GetMapping("/edit-category/{id}")
     public ModelAndView editFormCategory(@PathVariable("id")Long id){
         Category category = categoryService.findById(id);
-        ModelAndView modelAndView = new ModelAndView("/category/edit");
+        ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_FORM_EDIT);
         modelAndView.addObject("category",category);
         return modelAndView;
     }
@@ -59,7 +71,7 @@ public class CategoryController {
     @PostMapping("/edit-category")
     public ModelAndView editCategory (@ModelAttribute("category") Category category){
         categoryService.save(category);
-        ModelAndView modelAndView = new ModelAndView("/category/edit");
+        ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_FORM_EDIT);
         modelAndView.addObject("category",category);
         modelAndView.addObject("message","update successfully");
         return modelAndView;
@@ -68,7 +80,7 @@ public class CategoryController {
     @GetMapping("/delete-category/{id}")
     public ModelAndView deleteFormCategory (@PathVariable("id") Long id){
         Category category = categoryService.findById(id);
-        ModelAndView modelAndView = new ModelAndView("/category/delete");
+        ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_DELETE);
         modelAndView.addObject("category", category);
         return modelAndView;
     }
@@ -84,11 +96,11 @@ public class CategoryController {
 
         Category category = categoryService.findById(id);
         if(category == null){
-            ModelAndView modelAndView = new ModelAndView("/error-404");
+            ModelAndView modelAndView = new ModelAndView(ERROR_404);
             return modelAndView;
         }else {
             Iterable<Blog> blogs = blogService.findAllByCategory(category);
-            ModelAndView modelAndView = new ModelAndView("/category/view");
+            ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_VIEW);
             modelAndView.addObject("category",category);
             modelAndView.addObject("blog", blogs);
             return modelAndView;

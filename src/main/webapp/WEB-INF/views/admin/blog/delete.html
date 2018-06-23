@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Delete | </title>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <section layout:fragment="content">
+                <div class="container">
+                    <div class="row">
+                        <h2>Delete blog</h2>
+                        <div class="alert alert-warning" role="alert">
+                            Are you sure want delete blog ?
+                        </div>
+                        <form th:action="@{/delete-blog}" th:object="${blog}"  method="post" class="form" >
+                            <div class="form-group">
+                                <lable>Title</lable>
+                                <input type="hidden" th:field="*{id}">
+                                <input type="text" class="form-control" th:field="*{title}" disabled/>
+                            </div>
+                            <button class="btn-danger" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /page content -->
+    </div>
+</div>
+
+</body>
+</html>

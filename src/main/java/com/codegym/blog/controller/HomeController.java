@@ -15,10 +15,10 @@ public class HomeController {
     @Autowired
     private BlogService blogService;
 
-    @GetMapping(value = {"", "/"})
+    @GetMapping(value = {" ", "/"})
     public ModelAndView index(Pageable pageable){
         Page<Blog> blogs = blogService.findAll(pageable);
-        ModelAndView modelAndView = new ModelAndView("/index2");
+        ModelAndView modelAndView = new ModelAndView("/page/index");
         modelAndView.addObject("blogs", blogs);
         return modelAndView;
     }

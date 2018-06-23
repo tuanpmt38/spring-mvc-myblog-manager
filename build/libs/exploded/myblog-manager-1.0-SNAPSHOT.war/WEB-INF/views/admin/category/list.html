@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Create | Category </title>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <section layout:fragment="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>List category</h2>
+                            <table class="table table-striped custab">
+                                <thead>
+                                <a href="/create-category" class="btn btn-info btn-xs pull-right"><b>+</b> Add new Category</a>
+                                <tr>
+                                    <th>Stt</th>
+                                    <th>Title</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                                </thead>
+                                <th:block th:each="category, inter:${categories}">
+                                    <tr>
+                                        <td th:text="${inter.count}"></td>
+                                        <td><a th:href="@{/view-category/__${category.id}__}" href="" th:text="${category.name}"></a></td>
+                                        <td class="text-center">
+                                            <a th:href="@{/edit-category/__${category.id}__}" class='btn btn-info btn-xs'>
+                                                <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                            <a th:href="@{/delete-category/__${category.id}__}" href="#" class="btn btn-danger btn-xs">
+                                                <span class="glyphicon glyphicon-remove"></span> Del</a>
+                                        </td>
+                                    </tr>
+                                </th:block>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /page content -->
+    </div>
+</div>
+
+</body>
+</html>
