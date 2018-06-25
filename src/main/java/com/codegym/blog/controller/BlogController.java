@@ -24,6 +24,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Controller
+
+@RequestMapping("/blogs")
 public class BlogController {
     public static final String ADMIN_BLOG_CREATE = "/admin/blog/create";
     public static final String ADMIN_BLOG_LIST = "/admin/blog/list";
@@ -87,7 +89,7 @@ public class BlogController {
         return modelAndView;
     }
 
-    @GetMapping("/blogs")
+    @GetMapping("/")
     public ModelAndView listBlog(@RequestParam("search") Optional<String> search, Pageable pageable) {
 
         Page<Blog> blogs;

@@ -17,6 +17,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
+@RequestMapping("/categories")
 public class CategoryController {
 
     public static final String ADMIN_CATEGORY_LIST = "/admin/category/list";
@@ -32,7 +33,7 @@ public class CategoryController {
     @Autowired
     private BlogService blogService;
 
-    @GetMapping("/categories")
+    @GetMapping("")
     public ModelAndView listCategory(@RequestParam("search") Optional<String> search, Pageable pageable){
 
         Page<Category> categories;

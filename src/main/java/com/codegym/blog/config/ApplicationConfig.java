@@ -75,7 +75,10 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.environment = environment;
     }
 
-
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -91,7 +94,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public CategoryService categoryService(){ return new CategoryServiceImpl();
     }
 
-        //Thymeleaf Configuration
     @Bean
     public SpringResourceTemplateResolver templateResolver(){
 
@@ -134,6 +136,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan(new String[]{"com.codegym.blog.model"});
+
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
