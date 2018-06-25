@@ -24,6 +24,7 @@
                                 <th>Stt</th>
                                 <th>Image</th>
                                 <th>Title</th>
+                                <th>Description</th>
                                 <th>Create Date</th>
                                 <th>Category</th>
                                 <th class="text-center">Action</th>
@@ -36,6 +37,7 @@
                                     <img th:src="@{/features/__${blog.feature}__}" class="thumbnail-sm">
                                 </td>
                                 <td><a th:href="@{/view-blog/__${blog.id}__}" th:text="${blog.title}"></a></td>
+                                <td th:text="${blog.summary}" class="des-size"></td>
                                 <td th:text="${blog.createDate}"></td>
                                 <td th:text="${blog.category.name}"></td>
                                 <td class="text-center"><a th:href="@{/edit-blog/__${blog.id}__}" class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Edit</a> <a th:href="@{/delete-blog/__${blog.id}__}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
@@ -43,9 +45,9 @@
                             </th:block>
                         </table>
                         <div>
-                            <a th:href="@{'/blogs'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}" th:text="#{previous_lable}"></a>
+                            <a th:href="@{'/blogs'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}"></a>
                             <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
-                            <a th:href="@{'/blogs'(page=${blogs.number + 2})}" th:if="${blogs.hasNext()}" th:text="#{next_lable}">Next</a>
+                            <a th:href="@{'/blogs'(page=${blogs.number + 2})}" th:if="${blogs.hasNext()}">Next</a>
                         </div>
                     </div>
                 </div>

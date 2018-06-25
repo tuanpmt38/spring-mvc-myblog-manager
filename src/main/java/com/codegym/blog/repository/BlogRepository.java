@@ -11,4 +11,6 @@ public interface BlogRepository extends PagingAndSortingRepository <Blog,Long>{
     Iterable<Blog> findAllByCategory(Category category);
 
     Page<Blog> findAllByTitleContaining(String title, Pageable pageable);
+
+
 }

@@ -79,13 +79,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.environment = environment;
     }
 
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return  new BCryptPasswordEncoder();
-    }
-
-
     @Bean
     public BlogService blogService(){
         return new BlogServiceImpl();
@@ -138,7 +131,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan(new String[]{"com.codegym.blog.model"});
-
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
@@ -187,7 +179,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
                 .addResourceLocations("file:" + StorageUtils.FEATURE_LOCATION + "/");
     }
 
-
     //paging
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
@@ -198,12 +189,11 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         super.addArgumentResolvers(argumentResolvers);
     }
 
-    // i18n
+    // i18n, validation
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasenames("ValidationMessages");
-        messageSource.setBasename("message");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }

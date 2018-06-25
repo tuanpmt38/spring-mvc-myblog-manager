@@ -6,13 +6,15 @@ import com.codegym.blog.service.BlogService;
 import com.codegym.blog.service.CategoryService;
 import com.codegym.blog.validation.CategoryValidation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.persistence.Lob;
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 public class CategoryController {
@@ -31,8 +33,14 @@ public class CategoryController {
     private BlogService blogService;
 
     @GetMapping("/categories")
-    public ModelAndView listCategory(){
-        Iterable<Category> categories = categoryService.findAll();
+    public ModelAndView listCategory(@RequestParam("search") Optional<String> search, Pageable pageable){
+
+        Page<Category> categories;
+        if(search.isPresent()){
+            categories = categoryService.findAllByNameContaining(search.get(), pageable);
+        }else{
+            categories = categoryService.findAll(pageable);
+        }
         ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_LIST);
         modelAndView.addObject("categories", categories);
         return modelAndView;
@@ -50,7 +58,7 @@ public class CategoryController {
     public ModelAndView create(@Valid @ModelAttribute ("category") Category category, BindingResult bindingResult){
 
         ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_FORM_CREATE);
-        new CategoryValidation().validate(category, bindingResult);
+        new CategoryValidation(categoryService).validate(category, bindingResult);
         if(bindingResult.hasFieldErrors()){
             return modelAndView;
         }
@@ -69,9 +77,14 @@ public class CategoryController {
     }
 
     @PostMapping("/edit-category")
-    public ModelAndView editCategory (@ModelAttribute("category") Category category){
-        categoryService.save(category);
+    public ModelAndView editCategory (@Valid @ModelAttribute("category") Category category, BindingResult bindingResult){
+
         ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_FORM_EDIT);
+        new CategoryValidation(categoryService).validate(category, bindingResult);
+        if(bindingResult.hasFieldErrors()){
+            return modelAndView;
+        }
+        categoryService.save(category);
         modelAndView.addObject("category",category);
         modelAndView.addObject("message","update successfully");
         return modelAndView;

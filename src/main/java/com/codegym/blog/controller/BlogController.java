@@ -6,14 +6,17 @@ import com.codegym.blog.model.Category;
 import com.codegym.blog.model.FormPost;
 import com.codegym.blog.service.BlogService;
 import com.codegym.blog.service.CategoryService;
+import com.codegym.blog.validation.BlogValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import utils.StorageUtils;
 
+import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -28,6 +31,7 @@ public class BlogController {
     public static final String ADMIN_BLOG_DELETE = "/admin/blog/delete";
     public static final String ADMIN_BLOG_VIEW = "/admin/blog/view";
     public static final String ERROR_404 = "/error-404";
+
     @Autowired
     private BlogService blogService;
 
@@ -43,12 +47,20 @@ public class BlogController {
     public ModelAndView createForm() {
 
         ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_CREATE);
-        modelAndView.addObject("blog", new Blog());
+        modelAndView.addObject("formPost", new FormPost());
         return modelAndView;
     }
 
     @PostMapping("/create-blog")
-    public ModelAndView saveBlog(@ModelAttribute("formPost") FormPost formPost) {
+    public ModelAndView saveBlog(@Valid @ModelAttribute("formPost") FormPost formPost, BindingResult bindingResult) {
+
+        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_CREATE);
+
+        new BlogValidation().validate(formPost,bindingResult);
+
+        if(bindingResult.hasFieldErrors()){
+            return modelAndView;
+        }
         try {
 
             String randomCode = UUID.randomUUID().toString();
@@ -63,15 +75,14 @@ public class BlogController {
             blog.setCreateDate(LocalDate.now());
             blog.setFeature(randomName);
             blog.setCategory(formPost.getCategory());
-
             blogService.save(blog);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_CREATE);
-        modelAndView.addObject("blog", new FormPost());
+
+        modelAndView.addObject("formPost", new FormPost());
         modelAndView.addObject("message", "create blog successfully");
         return modelAndView;
     }
@@ -96,7 +107,6 @@ public class BlogController {
     public ModelAndView editForm(@PathVariable("id") Long id) {
 
         Blog blog = blogService.findById(id);
-
         FormPost formPost = new FormPost();
 
         formPost.setId(blog.getId());
@@ -112,11 +122,21 @@ public class BlogController {
     }
 
     @PostMapping("/edit-blog/{id}")
-    public ModelAndView updateBlog(@PathVariable("id") Long id, @ModelAttribute("formPost") FormPost formPost) {
+    public ModelAndView updateBlog(@Valid @PathVariable("id") Long id,
+                                   @ModelAttribute("formPost") FormPost formPost,
+                                   BindingResult bindingResult) {
+
+        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_EDIT);
+
+        new BlogValidation().validate(formPost, bindingResult);
+        if(bindingResult.hasFieldErrors()){
+            return modelAndView;
+        }
 
         Blog blog = blogService.findById(id);
 
         if(!formPost.getFeature().isEmpty()){
+
             StorageUtils.removeFeature(blog.getFeature());
             String randomCode = UUID.randomUUID().toString();
             String originFileName = formPost.getFeature().getOriginalFilename();
@@ -137,10 +157,8 @@ public class BlogController {
         blog.setSummary(formPost.getSummary());
         blog.setContent(formPost.getContent());
         blog.setCategory(formPost.getCategory());
-
         blogService.save(blog);
 
-        ModelAndView modelAndView = new ModelAndView(ADMIN_BLOG_EDIT);
         modelAndView.addObject("formPost", formPost);
         modelAndView.addObject("message", "update blog successfully");
         return modelAndView;

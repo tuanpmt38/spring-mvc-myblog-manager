@@ -23,6 +23,9 @@
                             </div>
                         </th:block>
                         <form th:object="${formPost}" enctype="multipart/form-data" method="post" class="form">
+                            <div  th:if="${#fields.hasErrors()}" class="alert alert-danger" role="alert">
+                                <div th:each="error : ${#fields.errors()}" th:text="${error}"></div>
+                            </div>
                             <input type="hidden" th:field="*{id}"/>
                             <div class="form-group">
                                 <lable>Title</lable>
@@ -31,12 +34,15 @@
                             <div class="form-group">
                                 <label>Category:</label>
                                 <select th:field="*{category}">
-                                    <option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.name}" th:selected="${c.id==formPost.category.id}"></option>
+                                    <option th:each="c : ${categories}"
+                                            th:value="${c.id}" th:text="${c.name}"
+                                            th:selected="${c.id == formPost.category.id}">
+                                    </option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <lable>Summary</lable>
-                                <textarea type="text" th:field="*{summary}" class="form-control" id="teaser-summernote"></textarea>
+                                <textarea type="text" th:field="*{summary}" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
                                 <lable>Content</lable>

@@ -17,5 +17,6 @@ public interface BlogService {
 
     void delete (Long id);
 
+
     Page<Blog> findAllByTitleContaining(String title, Pageable pageable);
 }

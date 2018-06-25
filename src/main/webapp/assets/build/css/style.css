@@ -17,3 +17,36 @@
 }
 
 /*index -css- page*/
+/*table edit*/
+.table>tbody>tr>td{
+    vertical-align:baseline!important;
+}
+.toggle {
+    float: left;
+    margin: 0;
+    padding-top: 16px;
+    width: 70%;
+}
+
+.toggle ul{
+    list-style: none;
+    display: flex;
+}
+.toggle ul>li .btn{
+    margin-bottom: 0px;
+}
+.toggle ul>li{
+}
+
+.toggle a {
+    padding: 15px 15px 0;
+    margin: 0;
+    cursor: pointer
+}
+.top_nav .navbar-right {
+    margin: 0;
+    width: 30%;
+}
+.table>tbody>tr>td.des-size{
+    width: 40%;
+}

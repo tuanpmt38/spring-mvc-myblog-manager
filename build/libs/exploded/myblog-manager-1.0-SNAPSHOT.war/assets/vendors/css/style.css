@@ -264,3 +264,7 @@ button.accordion.active:after {
     width: 360px;
     height: 302px;
 }
+/*table edit*/
+.table>tbody>tr>td{
+    vertical-align:baseline!important;
+}
