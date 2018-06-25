@@ -29,6 +29,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -62,21 +63,23 @@ import java.util.Properties;
 @ComponentScan("com.codegym.blog")
 @ComponentScan("com.codegym.blog.validation")
 @EnableSpringDataWebSupport
+@EnableWebSecurity
 @PropertySource(value = { "classpath:application.properties" })
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
+    private Environment environment;
+    @Autowired
+    public ApplicationConfig(Environment environment){
+        this.environment = environment;
+    }
+
+
+
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
-    }
-
-    private Environment environment;
-
-    @Autowired
-    public ApplicationConfig(Environment environment) {
-        this.environment = environment;
     }
 
     @Bean
