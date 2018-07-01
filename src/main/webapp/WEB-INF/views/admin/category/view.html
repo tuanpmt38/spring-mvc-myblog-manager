@@ -17,9 +17,17 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <th:block th:each="blogs:${blog}">
-                                <h2 th:text="${blogs.title}"></h2>
-                            </th:block>
+                            <h3>List blogs in: <span th:text="${category.name}"></span></h3>
+                            <table class="table">
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Blog</th>
+                                </tr>
+                                <tr th:each="blogs, inter:${blog}">
+                                    <td th:text="${inter.count}"></td>
+                                    <td th:text="${blogs.title}"></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

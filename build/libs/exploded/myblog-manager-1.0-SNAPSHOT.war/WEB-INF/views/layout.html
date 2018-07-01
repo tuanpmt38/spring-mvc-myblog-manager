@@ -40,7 +40,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2  sec:authentication="principal.username"></h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -50,25 +50,23 @@
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
-                        <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a href="/blogs"><i class="fa fa-home"></i> Home </a></li>
+                            <li><a href="/" arget="_blank"><i class="fa fa-home"></i> Home </a></li>
                             <li><a><i class="fa fa-edit"></i> Blog <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/blogs">List</a></li>
-                                    <li><a href="/create-blog">Create</a></li>
+                                    <li><a href="/admin/blogs">List</a></li>
+                                    <li><a href="/admin/blogs/create-blog">Create</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-book"></i> Category <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/categories">List</a></li>
-                                    <li><a href="/create-category">Create</a></li>
+                                    <li><a href="/admin/categories">List</a></li>
+                                    <li><a href="/admin/categories/create-category">Create</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-bar-chart-o"></i> User <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="chartjs.html">Create</a></li>
-                                    <li><a href="chartjs2.html">Delete</a></li>
+                                    <li><a th:href="@{/login}">Create</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -117,7 +115,7 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="../../assets/images/img.jpg" alt="">John Doe
+                                <img src="../../assets/images/img.jpg" alt=""><span sec:authentication="principal.username"></span>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -129,7 +127,7 @@
                                     </a>
                                 </li>
                                 <li><a href="javascript:;">Help</a></li>
-                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
                         </li>
                     </ul>

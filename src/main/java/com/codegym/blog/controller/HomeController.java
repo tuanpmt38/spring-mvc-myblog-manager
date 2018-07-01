@@ -22,4 +22,9 @@ public class HomeController {
         modelAndView.addObject("blogs", blogs);
         return modelAndView;
     }
+
+    @GetMapping("/admin")
+    public String adminPage(){
+        return "redirect:/admin/blogs";
+    }
 }

@@ -23,7 +23,7 @@
                                     <p th:text="${message}"></p>
                                 </div>
                             </th:block>
-                            <form method="post" th:object="${category}" class="form" th:action="@{/create-category}">
+                            <form method="post" th:object="${category}" class="form">
                                 <div  th:if="${#fields.hasErrors()}" class="alert alert-danger" role="alert">
                                     <div th:each="error : ${#fields.errors()}" th:text="${error}"></div>
                                 </div>

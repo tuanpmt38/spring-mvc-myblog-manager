@@ -19,7 +19,7 @@
                         <div class="col-md-12">
                             <div class="">
                                 <h3 th:text="${blog.title}"></h3>
-                                (<a th:href="@{/edit-blog/__${blog.id}__}">Edit</a>)
+                                (<a th:href="@{/admin/blogs/edit-blog/__${blog.id}__}">Edit</a>)
                             </div>
                             <div class="post-teaser">
                                 <img th:src="@{/features/__${blog.feature}__}"/>

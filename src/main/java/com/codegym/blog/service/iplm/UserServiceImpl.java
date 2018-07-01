@@ -4,16 +4,19 @@ import com.codegym.blog.model.User;
 import com.codegym.blog.repository.UserRepository;
 import com.codegym.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository){
+    public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     @Override
@@ -27,19 +30,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser(User user) {
-        userRepository.save(user);
+    public User saveUser(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        return this.userRepository.save(user);
     }
 
     @Override
     public boolean existEmail(String email) {
-        userRepository.findByEmail(email);
-        return (email != null);
+        User user = userRepository.findByEmail(email);
+        return (user != null);
     }
 
     @Override
     public boolean existPhone(String phone) {
-        userRepository.findByPhone(phone);
-        return (phone !=null);
+        User user = userRepository.findByPhone(phone);
+        return (user != null);
     }
 }

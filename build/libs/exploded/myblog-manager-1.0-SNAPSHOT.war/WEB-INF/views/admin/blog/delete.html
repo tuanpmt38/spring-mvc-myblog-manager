@@ -20,7 +20,7 @@
                         <div class="alert alert-warning" role="alert">
                             Are you sure want delete blog ?
                         </div>
-                        <form th:action="@{/delete-blog}" th:object="${blog}"  method="post" class="form" >
+                        <form th:object="${blog}"  method="post" class="form" >
                             <div class="form-group">
                                 <lable>Title</lable>
                                 <input type="hidden" th:field="*{id}">

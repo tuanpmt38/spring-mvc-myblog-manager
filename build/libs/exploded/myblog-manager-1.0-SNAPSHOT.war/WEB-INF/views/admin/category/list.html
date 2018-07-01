@@ -20,7 +20,7 @@
                             <h2>List category</h2>
                             <table class="table table-striped custab">
                                 <thead>
-                                <a href="/create-category" class="btn btn-info btn-xs pull-right"><b>+</b> Add new Category</a>
+                                <a href="/admin/categories/create-category" class="btn btn-info btn-xs pull-right"><b>+</b> Add new Category</a>
                                 <tr>
                                     <th>Stt</th>
                                     <th>Title</th>
@@ -30,12 +30,12 @@
                                 <th:block th:each="category, inter:${categories}">
                                     <tr>
                                         <td th:text="${inter.count}"></td>
-                                        <td><a th:href="@{/view-category/__${category.id}__}" href="" th:text="${category.name}"></a></td>
+                                        <td><a th:href="@{/admin/categories/view-category/__${category.id}__}" href="" th:text="${category.name}"></a></td>
                                         <td class="text-center">
-                                            <a th:href="@{/edit-category/__${category.id}__}" class='btn btn-info btn-xs'>
-                                                <span class="glyphicon glyphicon-edit"></span> Edit</a>
-                                            <a th:href="@{/delete-category/__${category.id}__}" href="#" class="btn btn-danger btn-xs">
-                                                <span class="glyphicon glyphicon-remove"></span> Del</a>
+                                            <a th:href="@{/admin/categories/edit-category/__${category.id}__}" class='btn btn-info btn-xs'>
+                                             <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                            <a th:href="@{/admin/categories/delete-category/__${category.id}__}" href="#" class="btn btn-danger btn-xs">
+                                             <span class="glyphicon glyphicon-remove"></span> Del</a>
                                         </td>
                                     </tr>
                                 </th:block>

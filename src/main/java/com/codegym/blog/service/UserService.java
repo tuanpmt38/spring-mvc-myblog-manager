@@ -8,7 +8,7 @@ public interface UserService {
 
     User findById(Long id);
 
-    void saveUser(User user);
+    User saveUser(User user);
 
     boolean existEmail(String email);
 

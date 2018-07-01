@@ -29,12 +29,18 @@
         <div>
             <section class="login_content">
                 <form th:action="@{/register}"  th:object="${user}" method="post">
+                    <div  th:if="${#fields.hasErrors()}" class="alert alert-danger" role="alert">
+                        <div th:each="error : ${#fields.errors()}" th:text="${error}"></div>
+                    </div>
                     <h1>Create Account</h1>
                     <div>
                         <input type="text" th:field="*{name}" class="form-control" placeholder="Username" required="" />
                     </div>
                     <div>
                         <input type="email" th:field="*{email}" class="form-control" placeholder="Email" required="" />
+                    </div>
+                    <div>
+                        <input type="text" th:field="*{phone}" class="form-control" placeholder="phone" required="" />
                     </div>
                     <div>
                         <input type="password" th:field="*{password}" class="form-control" placeholder="Password" required="" />

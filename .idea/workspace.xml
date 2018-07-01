@@ -7,37 +7,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4846b78f-0c8d-477a-b68f-68b1aca7d270" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/validation/UserValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/UserPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/security/UserDetailServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/config/ApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/config/ApplicationConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/ValidationMessages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/ValidationMessages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/controller/AuthenticationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/controller/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/controller/BlogController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/service/iplm/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/service/iplm/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/validation/UserValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/classes/com/codegym/blog/validation/UserValidation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/blog/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/blog/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/blog/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/blog/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/blog/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/blog/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/blog/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/blog/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/category/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/category/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/category/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/category/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/category/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/category/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/admin/category/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/page/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/WEB-INF/views/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/assets/build/css/custom.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/assets/build/css/custom.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/assets/build/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/assets/build/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/assets/vendors/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/myblog-manager-1.0-SNAPSHOT.war/assets/vendors/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/myblog-manager-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/myblog-manager-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/config/ApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/config/ApplicationConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/controller/AuthenticationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/controller/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/controller/BlogController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/service/iplm/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/service/iplm/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/validation/UserValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/codegym/blog/validation/UserValidation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/ValidationMessages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/ValidationMessages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BlogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/iplm/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/iplm/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/blog/validation/UserValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/blog/validation/UserValidation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ValidationMessages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ValidationMessages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/page/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/build/css/custom.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/build/css/custom.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/build/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/build/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/vendors/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/vendors/css/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -76,32 +107,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApplicationConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationConfig.java">
+      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="394">
+              <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/config/SecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1203#1234#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationSecurityInitializer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationSecurityInitializer.java">
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="330">
+              <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -127,6 +158,7 @@
       <find>src=&quot;img/</find>
       <find>login</find>
       <find>.toggle</find>
+      <find>login_content</find>
     </findStrings>
     <replaceStrings>
       <replace>href=&quot;../assets/vendors/</replace>
@@ -440,21 +472,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/SecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/ApplicationSecurityInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/ApplicationConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/UserPrincipal.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/security/UserDetailServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/UserValidator.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/list.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/create.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/edit.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/validation/CategoryValidation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/repository/BlogRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/BlogService.java" />
@@ -464,33 +488,41 @@
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/api/CategoryApiController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/CategoryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/iplm/CategoryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assets/build/css/custom.min.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/build/css/custom.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assets/vendors/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/create.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/edit.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assets/build/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/list.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationSecurityInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/page/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/login.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BlogController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/AuthenticationController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ValidationMessages.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/iplm/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/validation/UserValidation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/UserPrincipal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/security/UserDetailServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/build/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/vendors/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/build/css/custom.min.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/AuthenticationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/validation/UserValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/ValidationMessages.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/service/iplm/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/page/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/create.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/delete.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/view.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/edit.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/list.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/list.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BlogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/CategoryController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/create.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/view.html" />
       </list>
     </option>
   </component>
@@ -525,6 +557,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
@@ -574,34 +607,6 @@
               <item name="myblog-manager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myblog-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myblog-manager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myblog-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myblog-manager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="iplm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myblog-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myblog-manager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -628,11 +633,31 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="myblog-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myblog-manager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myblog-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myblog-manager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="category" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -640,7 +665,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/project/quiz-system" />
+    <property name="last_opened_file_path" value="$USER_HOME$/codegym/gymmp3" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -774,7 +799,7 @@
       </ConfigurationWrapper>
     </configuration>
     <configuration name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.7" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="Gradle : com.codegym : myblog-manager-1.0-SNAPSHOT.war">
           <settings>
@@ -894,15 +919,23 @@
       <workItem from="1529889372163" duration="16408000" />
       <workItem from="1529926517345" duration="1492000" />
       <workItem from="1529931463207" duration="786000" />
-      <workItem from="1529939582092" duration="2066000" />
+      <workItem from="1529939582092" duration="7042000" />
+      <workItem from="1529975961070" duration="1080000" />
+      <workItem from="1529981123136" duration="599000" />
+      <workItem from="1529984204499" duration="16000" />
+      <workItem from="1530007830719" duration="14000" />
+      <workItem from="1530007859314" duration="2132000" />
+      <workItem from="1530019756251" duration="12449000" />
+      <workItem from="1530062115469" duration="1961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216423000" />
+    <option name="totallyTimeSpent" value="239650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="-4" width="1321" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -923,10 +956,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5819033" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5819033" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32917318" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3019608" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28235295" />
       <window_info anchor="right" id="Bean Validation" order="4" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.32941177" />
@@ -947,7 +980,7 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32970452" />
       <window_info anchor="bottom" id="Spring" order="9" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.7269891" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5819033" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -965,7 +998,7 @@
       <window_info anchor="bottom" id="Version Control" order="15" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.32941177" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26588234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27764705" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="7" side_tool="true" />
@@ -973,7 +1006,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32970452" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
       <window_info anchor="right" id="Bean Validation" order="10" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39937598" />
     </layout-to-restore>
@@ -986,45 +1019,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="30" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/security/UserDetailServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/model/UserValidator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/model/UserPrincipal.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BaseController.java" />
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/model/Blog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-625">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/vendors/bootstrap/dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-89224" />
@@ -1041,13 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="281" selection-start-line="281" selection-end-line="281" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1100,48 +1091,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/build/css/custom.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/build/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
           <caret line="4269" selection-start-line="4269" selection-end-line="4269" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/vendors/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="270" selection-start-line="270" selection-end-line="270" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="34" column="74" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/build/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1153,59 +1106,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/page/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="6" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BlogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>
@@ -1230,75 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/service/iplm/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ValidationMessages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/validation/UserValidation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/AuthenticationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1316,10 +1151,236 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/config/ApplicationConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-735">
+          <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/build/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="52" selection-start-line="52" selection-end-line="61" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/vendors/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="279" column="1" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/build/css/custom.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="110" column="62" selection-start-line="110" selection-start-column="62" selection-end-line="110" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/model/UserPrincipal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/net/PlainSocketImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/service/security/UserDetailServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ValidationMessages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/AuthenticationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/service/iplm/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/validation/UserValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/page/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/delete.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/BlogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="187" column="5" lean-forward="true" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/blog/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="68" column="28" lean-forward="true" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/category/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codegym/blog/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+          <folding>
+            <element signature="e#1203#1234#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

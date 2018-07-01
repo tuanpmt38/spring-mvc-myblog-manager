@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/categories")
+@RequestMapping("/admin/categories")
 public class CategoryController {
 
     public static final String ADMIN_CATEGORY_LIST = "/admin/category/list";
@@ -102,7 +102,7 @@ public class CategoryController {
     @PostMapping("/delete-category/{id}")
     public String deleteCategory(@PathVariable("id") Long id){
         categoryService.remove(id);
-        return "redirect:/categories";
+        return "redirect:/admin/categories";
     }
 
     @GetMapping("/view-category/{id}")

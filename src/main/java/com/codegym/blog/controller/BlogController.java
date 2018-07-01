@@ -25,7 +25,7 @@ import java.util.UUID;
 
 @Controller
 
-@RequestMapping("/blogs")
+@RequestMapping("/admin/blogs")
 public class BlogController {
     public static final String ADMIN_BLOG_CREATE = "/admin/blog/create";
     public static final String ADMIN_BLOG_LIST = "/admin/blog/list";
@@ -89,7 +89,7 @@ public class BlogController {
         return modelAndView;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ModelAndView listBlog(@RequestParam("search") Optional<String> search, Pageable pageable) {
 
         Page<Blog> blogs;
@@ -180,11 +180,11 @@ public class BlogController {
         }
     }
 
-    @PostMapping("/delete-blog")
+    @PostMapping("/delete-blog/{id}")
     public String delete(@ModelAttribute("blog") Blog blog) {
 
         blogService.delete(blog.getId());
-        return "redirect:/blogs";
+        return "redirect:/admin/blogs";
     }
 
     @GetMapping("/view-blog/{id}")

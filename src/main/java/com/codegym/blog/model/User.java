@@ -24,13 +24,6 @@ public class User {
 
     public User(){}
 
-    public User(String name, String email, String phone, String password) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
-    }
-
     public User(String name, String email, String phone, String password, List<Blog> blogs, List<Category> categories) {
         this.name = name;
         this.email = email;

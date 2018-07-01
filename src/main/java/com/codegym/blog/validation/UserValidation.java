@@ -11,14 +11,13 @@ public class UserValidation implements Validator {
 
     private UserService userService;
 
-    @Autowired
     public UserValidation(UserService userService){
         this.userService = userService;
     }
 
     @Override
     public boolean supports(Class<?> clazz) {
-        return UserValidation.class.isAssignableFrom(clazz);
+        return User.class.isAssignableFrom(clazz);
     }
 
     @Override
@@ -31,9 +30,9 @@ public class UserValidation implements Validator {
         String password = user.getPassword();
 
         ValidationUtils.rejectIfEmpty(errors,"name","name.empty");
-        ValidationUtils.rejectIfEmpty(errors,"name","email.empty");
-        ValidationUtils.rejectIfEmpty(errors,"name","phone.empty");
-        ValidationUtils.rejectIfEmpty(errors,"name","password.empty");
+        ValidationUtils.rejectIfEmpty(errors,"email","email.empty");
+        ValidationUtils.rejectIfEmpty(errors,"phone","phone.empty");
+        ValidationUtils.rejectIfEmpty(errors,"password","password.empty");
 
         if(userService.existEmail(email)) {
             errors.rejectValue("email", "email.exists" );
@@ -41,8 +40,14 @@ public class UserValidation implements Validator {
         if (userService.existPhone(phone)) {
             errors.rejectValue("phone", "phone.exists");
         }
+        if (phone.length()>11 || phone.length()<10){
+            errors.rejectValue("phone", "phone.length");
+        }
         if (!phone.startsWith("0")){
             errors.rejectValue("phone", "phone.startsWith");
+        }
+        if (!phone.matches("(^$|[0-9]*$)")){
+            errors.rejectValue("phone", "phone.matches");
         }
         if (password.length() < 6 || password.length() > 20){
             errors.rejectValue("password", "password.length");

@@ -39,7 +39,8 @@ public class AuthenticationController {
     @PostMapping("/register")
     public ModelAndView saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult){
         new UserValidation(userService).validate(user, bindingResult);
-        if(bindingResult.hasFieldErrors()){
+
+        if(!bindingResult.hasFieldErrors()){
             userService.saveUser(user);
             ModelAndView modelAndView = new ModelAndView("redirect:/login");
             return modelAndView;
