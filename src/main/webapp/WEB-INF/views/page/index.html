@@ -20,7 +20,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="https://lh3.googleusercontent.com/-N4NB2F966TU/WM7V1KYusRI/AAAAAAAADtA/fPvGVNzOkCo7ZMqLI6pPITE9ZF7NONmawCJoC/w185-h40-p-rw/logo.png"></a>
+            <a class="navbar-brand" href="#"><img
+                    src="https://lh3.googleusercontent.com/-N4NB2F966TU/WM7V1KYusRI/AAAAAAAADtA/fPvGVNzOkCo7ZMqLI6pPITE9ZF7NONmawCJoC/w185-h40-p-rw/logo.png"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -28,7 +29,7 @@
                 <li><a href="#">Page 1</a></li>
                 <li><a href="#">Page 2</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right ml-auto">
                 <form class="navbar-form navbar-left">
                     <div class="input-group">
                         <input type="text" class="form-control" name="search" placeholder="Search">
@@ -39,53 +40,54 @@
                         </div>
                     </div>
                 </form>
-                <li class="nav-item">
+                <li class="nav-item" sec:authorize="!isAuthenticated()">
                     <a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
                 </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" href="/logout">Logout (<span sec:authentication="principal.username"/>)</a>
+                </li>
+
             </ul>
         </div>
     </div>
 </nav>
-<section id="blog-section" >
+<section id="blog-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="row">
-                    <div th:each="blog : ${blogs}" class="post">
-                        <div class="col-lg-6 col-md-6">
-                            <aside>
+                <div th:each="blog : ${blogs}" class="row">
+                    <div class="post">
+                        <aside>
+                            <div class="col-md-5">
                                 <div class="post-teaser">
                                     <img th:src="@{/features/__${blog.feature}__}" class="img-responsive"/>
                                 </div>
-                                <div class="content-title">
-                                    <div class="text-center">
-                                        <a th:href="@{/view-blog/__${blog.id}__}">
-                                            <h3 th:text="${blog.title}"></h3>
-                                        </a>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="left-content">
+                                    <div class="categories-name fade-in one">
+                                        <p th:text="${blog.category.name}"></p>
                                     </div>
-                                </div>
-                                <div class=" post-meta">
-                                    <span th:text="${blog.createDate}"></span>
-                                </div>
-                                <div class="content-footer">
-                                    <img class="user-small-img" src="/assets/vendors/img/profile-pic.webp">
-                                    <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
-                                    <span class="pull-right">
-                                 <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                                 <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                                 </span>
-                                    <div class="user-ditels">
-                                        <div class="social-icon">
-                                            <a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
-                                            <a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
-                                            <a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
-                                            <a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
-                                            <a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
+                                    <div class="content-title">
+                                        <div class="">
+                                            <a th:href="@{/view-blog/__${blog.id}__}">
+                                                <h3 th:text="${blog.title}"></h3>
+                                            </a>
                                         </div>
                                     </div>
+                                    <div class="text-content">
+                                        <p th:text="${blog.summary}"></p>
+                                    </div>
+                                    <div class="content-footer">
+                                        <img class="user-small-img" src="/assets/vendors/img/profile-pic.webp">
+                                        <span style="font-size: 16px;color: #000;">Sumit Kumar</span>
+                                        <span class=" post-meta">
+                                            <span><i class="fa fa-calendar" data-original-title="" title=""></i></span><span th:text="${blog.createDate}"></span>
+                                        </span>
+                                    </div>
                                 </div>
-                            </aside>
-                        </div>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </div>
@@ -102,7 +104,10 @@
                                 <a href="#">
                                     <h5>Excepteur sint occaecat cupi non proident laborum.</h5>
                                 </a>
-                                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                                <p>
+                                    <small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014
+                                    </small>
+                                </p>
                             </li>
                             <hr>
                             <li class="recent-post">
@@ -112,7 +117,10 @@
                                 <a href="#">
                                     <h5>Excepteur sint occaecat cupi non proident laborum.</h5>
                                 </a>
-                                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                                <p>
+                                    <small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014
+                                    </small>
+                                </p>
                             </li>
                             <hr>
                             <li class="recent-post">
@@ -122,7 +130,10 @@
                                 <a href="#">
                                     <h5>Excepteur sint occaecat cupi non proident laborum.</h5>
                                 </a>
-                                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                                <p>
+                                    <small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014
+                                    </small>
+                                </p>
                             </li>
                             <hr>
                             <li class="recent-post">
@@ -132,7 +143,10 @@
                                 <a href="#">
                                     <h5>Excepteur sint occaecat cupi non proident laborum.</h5>
                                 </a>
-                                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                                <p>
+                                    <small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014
+                                    </small>
+                                </p>
                             </li>
                         </ul>
                     </div>
@@ -149,9 +163,14 @@
                                 <a href="#">
                                     <h5>Excepteur sint occaecat cupi non proident laborum.</h5>
                                 </a>
-                                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                                <p>
+                                    <small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014
+                                    </small>
+                                </p>
                             </li>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
                     <hr>
@@ -165,9 +184,14 @@
                                 <a href="#">
                                     <h5>Excepteur sint occaecat cupi non proident laborum.</h5>
                                 </a>
-                                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                                <p>
+                                    <small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014
+                                    </small>
+                                </p>
                             </li>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
                     <hr>
@@ -181,9 +205,14 @@
                                 <a href="#">
                                     <h5>Excepteur sint occaecat cupi non proident laborum.</h5>
                                 </a>
-                                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                                <p>
+                                    <small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014
+                                    </small>
+                                </p>
                             </li>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
                     <hr>
@@ -197,9 +226,14 @@
                                 <a href="#">
                                     <h5>Excepteur sint occaecat cupi non proident laborum.</h5>
                                 </a>
-                                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                                <p>
+                                    <small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014
+                                    </small>
+                                </p>
                             </li>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
                 </div>
@@ -232,17 +266,17 @@
 <script src="/assets/vendors/js/jquery-3.1.1.js"></script>
 <script src="/assets/vendors/bootstrap/dist/js/bootstrap.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
     });
     var acc = document.getElementsByClassName("accordion");
     var i;
 
     for (i = 0; i < acc.length; i++) {
-        acc[i].onclick = function() {
+        acc[i].onclick = function () {
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
-            if (panel.style.maxHeight){
+            if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
             } else {
                 panel.style.maxHeight = panel.scrollHeight + "px";

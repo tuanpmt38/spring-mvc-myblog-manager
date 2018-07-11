@@ -77,17 +77,18 @@ public class CategoryController {
         return modelAndView;
     }
 
-    @PostMapping("/edit-category")
+    @PostMapping("/edit-category/{id}")
     public ModelAndView editCategory (@Valid @ModelAttribute("category") Category category, BindingResult bindingResult){
 
         ModelAndView modelAndView = new ModelAndView(ADMIN_CATEGORY_FORM_EDIT);
         new CategoryValidation(categoryService).validate(category, bindingResult);
         if(bindingResult.hasFieldErrors()){
-            return modelAndView;
+            modelAndView.addObject("category",category);
+        }else{
+            categoryService.save(category);
+            modelAndView.addObject("category",category);
+            modelAndView.addObject("message","update successfully");
         }
-        categoryService.save(category);
-        modelAndView.addObject("category",category);
-        modelAndView.addObject("message","update successfully");
         return modelAndView;
     }
 

@@ -2,6 +2,7 @@ package com.codegym.blog.validation;
 
 import com.codegym.blog.model.Category;
 import com.codegym.blog.service.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;

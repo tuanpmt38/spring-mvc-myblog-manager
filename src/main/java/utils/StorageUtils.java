@@ -3,7 +3,7 @@ package utils;
 import java.io.File;
 
 public class StorageUtils {
-    public static final String FEATURE_LOCATION = "/home/minhtuan/Documents/blog-features";
+    public static final String FEATURE_LOCATION = "/home/minhtuan/blog-features";
 
     public static String getFileExtension(String fileName){
         int dotIndex = fileName.lastIndexOf('.');
