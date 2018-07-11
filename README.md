@@ -1,1 +1,1 @@
-Project base on Spring Mvc
+Project base on Spring MVC
